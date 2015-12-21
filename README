@@ -47,8 +47,10 @@ General Usage :
 
 
 Sample Test Case Refrence:
-
-    * 
+      Single NameSpace Multiple Sets 
+    * https://github.com/maverickgautam/Aerospike-unit/blob/master/src/test/java/com/aerospike/unit/AerospikeSingleNodeClusterTest.java
+      Multi NameSpace Multiple Sets 
+    * https://github.com/maverickgautam/Aerospike-unit/blob/master/src/test/java/com/aerospike/unit/AerospikeSingleNodeMultiNamespaceClusterTest.java
 
 
 
