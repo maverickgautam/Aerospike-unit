@@ -25,16 +25,19 @@ Tar uses in this project : http://www.aerospike.com/download/server/3.6.0/artifa
 
 
 Aerospike Unit Key Features:
+    * Spawans a actual Aerospike Server
     * Figures out random port at runTime(for binding), thus can support multiple instances of the Aerospike server at same time on the same box.
     * Supports simultaneous build on the same box.
     * Spawns a single server for unit test case, Integration Test.
     * Indirect handle provided to spawn multiple nodes, and form a cluster by enabling multicast cluster detection.
     * Configurable Namespace, memory, Replication Factor.
     * No sudo permission required.
+    * Support SingleNameSpace/MultipLe Space
     * As of now "only supported on Linux"(MAC will be taken up later, Aerospike being a C code base the binaries are different for different platform)
     * Set/Bin/Lua related featured test cases supported.
     * ShutdownHook to stop the server. 
     ***** As of now only Supported on Ubuntu(MAC will be taken up later, Aerospike being a C code base the binaries are different  for different platform )
+    * build can run for both 1.7/1.8 change  project.build.targetJdk to 1.7 if needed
 
 
 General Usage : 
