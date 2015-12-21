@@ -1,0 +1,36 @@
+#!/bin/bash
+################################################################################
+#
+# Start Script for Aerospike
+#
+# Inherits definitions from aerospike run script
+#
+################################################################################
+
+process_stopped() {
+  debug "process stopped"
+  return 0
+}
+
+process_running() {
+  debug "process running"
+   kill $1
+   rm -f $2
+  return 0
+}
+
+process_died() {
+  info "process died abruptly"
+   rm -f $2
+  return 0
+}
+
+main() {
+
+  process_check
+  if [ $? -eq 0 ]; then
+    info "stopped"
+  else
+    error "an error occurred"
+  fi
+}

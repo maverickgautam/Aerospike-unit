@@ -1,0 +1,70 @@
+Aerospike 
+            ---------------------
+           |     NameSpace       |
+           |  -----------------  |                 
+           | |                 | |
+           | |      Set        | |  
+           | |  -------------  | |
+           | |  |  Bin:Value | | |
+           | |   ------------  | |
+           | |                 | |
+           |  -----------------  | 
+           |                     |
+            ---------------------
+
+Key = NameSpace + Set + PrimaryKey 
+Client.put =  key + BinName + BinValue
+
+Aerospike FAQ          : http://www.aerospike.com/docs/guide/FAQ.html
+Aerospike Tar Download : http://www.aerospike.com/docs/operations/install/linux/other/
+Aerospike 3.6.0 Tar    :  http://www.aerospike.com/download/server/3.6.0/artifact/tgz
+
+Tar uses in this project : http://www.aerospike.com/download/server/3.6.0/artifact/tgz 
+
+
+
+
+Aerospike Unit Key Features:
+    * Figures out random port at runTime(for binding), thus can support multiple instances of the Aerospike server at same time on the same box.
+    * Supports simultaneous build on the same box.
+    * Spawns a single server for unit test case, Integration Test.
+    * Indirect handle provided to spawn multiple nodes, and form a cluster by enabling multicast cluster detection.
+    * Configurable Namespace, memory, Replication Factor.
+    * No sudo permission required.
+    * As of now "only supported on Linux"(MAC will be taken up later, Aerospike being a C code base the binaries are different for different platform)
+    * Set/Bin/Lua related featured test cases supported.
+    * ShutdownHook to stop the server. 
+    ***** As of now only Supported on Ubuntu(MAC will be taken up later, Aerospike being a C code base the binaries are different  for different platform )
+
+
+General Usage : 
+
+    * AerospikeSingleNodeCluster cluster = new AerospikeSingleNodeCluster(namespace, memorySize);
+              cluster.start();
+             AerospikeRunTimeConfig runtimConfig = runtimConfig = cluster.getRunTimeConfiguration();
+    * Faster Dev Effort Use Constructor cluster = new AerospikeSingleNodeCluster(namespace, memorySize,"file:///usr/share/aerospike.tgz");
+
+
+
+Sample Test Case Refrence:
+
+    * 
+
+
+
+
+Links : 
+
+Upstart daemon through which Aerospike is spawned 
+http://upstart.ubuntu.com/
+
+Resue port 
+https://meteatamel.wordpress.com/2010/12/01/socket-reuseaddress-property-and-linux/
+
+Tcp port Range 
+http://stackoverflow.com/questions/10476987/best-tcp-port-number-range-for-internal-applications
+
+//FileSystem Operation
+http://www.java2novice.com/java-file-io-operations/
+
+
